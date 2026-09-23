@@ -1,0 +1,1 @@
+Pega imagem colorida, colocar em tons de cinza, depois em preto e branco

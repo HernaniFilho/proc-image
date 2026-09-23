@@ -122,13 +122,25 @@ def histogram_graph(image, graph_color="B", graph_title=None):
             hist = histogram(image, "GREY")
 
     pixel = np.arange(0, 256)
-    plt.bar(pixel, hist, color=graph_color)
-    plt.xlabel("Pixel")
-    plt.ylabel("Quantity")
-    if graph_title is not None:
-        plt.title(graph_title)
+    
+    #plt.bar(pixel, hist, color=graph_color)
+    #plt.xlabel("Pixel")
+    #plt.ylabel("Quantity")
+    #if graph_title is not None:
+    #    plt.title(graph_title)
 
     #plt.show()
+
+    fig, ax = plt.subplots(nrows=1,ncols=1,figsize=(6,4))
+    ax.bar(pixel, hist, color=graph_color)
+    ax.set_xlabel("Pixel")
+    ax.set_ylabel("Quantity")
+    if graph_title is not None:
+        ax.set_title(f"{graph_title} (Bar)")
+    
+
+    plt.tight_layout()
+    return fig, ax
 
 
 def main():
