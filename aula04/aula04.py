@@ -14,7 +14,7 @@ from aula01.aula01 import greyImage, histogram, histogram_graph, showImage
 
 
 def enhance_image(image, r1: int = 160, r2: int = 240):
-    histogram_graph(image, "GREY", "Fig 1")  # use para descobrir r1 e r2
+    # histogram_graph(image, "GREY", "Fig 1")  # use para descobrir r1 e r2
     enhanced_image = greyImage(image)
 
     for i in range(enhanced_image.shape[0]):
@@ -30,9 +30,9 @@ def enhance_image(image, r1: int = 160, r2: int = 240):
 
             enhanced_image[i, j] = int(round(new_pixel))
 
-    showImage(title="Enhanced Image", image=enhanced_image)
+    # showImage(title="Enhanced Image", image=enhanced_image)
 
-    histogram_graph(enhanced_image, "GREY", "Fig 2")  # use para mostrar a diferenca
+    # histogram_graph(enhanced_image, "GREY", "Fig 2")  # use para mostrar a diferenca
     return enhanced_image
 
 
