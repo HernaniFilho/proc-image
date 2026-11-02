@@ -108,6 +108,10 @@ def fill(
                 "fechada ou o ponto inicial esta fora do objeto. Veja a Frontier Image."
             )
 
+    # Resultados finais mostrados: fronteira, area preenchida e as duas juntas
+    showImage(frontier_image, title="Frontier Image")
+    showImage(area_image, title="Filled Image")
+
     # Uniao final: area preenchida + fronteira (comeca toda branca)
     final_filled_image = black_white_image.copy()
     for i in range(height):
@@ -116,7 +120,7 @@ def fill(
                 final_filled_image[i][j] = 0
             else:
                 final_filled_image[i][j] = 255
-    showImage(final_filled_image, title="Filled Image")
+    showImage(final_filled_image, title="Fronteira + Filled")
 
     # Coloca o resultado de volta na imagem preto e branca original
     result = black_white_image.copy()
@@ -135,7 +139,7 @@ def main():
 
     fill(
         image,
-        [110, 110],  # [linha, coluna] dentro de uma moeda
+        [440, 550],  # [linha, coluna] dentro de uma moeda
         [[1, 1, 1], [1, 1, 1], [1, 1, 1]],  # erosao -> fronteira
         [[0, 1, 0], [1, 1, 1], [0, 1, 0]],  # dilatacao em cruz (simetrica)
     )
