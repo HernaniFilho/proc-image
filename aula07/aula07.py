@@ -15,7 +15,7 @@ from aula06.aula06 import convolute_image
 
 def erode_image(image, mask: list[list[int]]):
     convoluted_image = convolute_image(image, mask, erosion)
-    showImage(convoluted_image, title="Eroded Image")
+    # showImage(convoluted_image, title="Eroded Image")
     return convoluted_image
 
 
